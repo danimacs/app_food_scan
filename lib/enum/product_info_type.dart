@@ -1,0 +1,4 @@
+enum ProductInfoType {
+  allergens,
+  traces,
+}
