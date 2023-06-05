@@ -2,6 +2,7 @@ import 'package:app_food_scan/mvc/controllers/product_allergen_type_controller.d
 import 'package:app_food_scan/widgets/abstract_product_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:provider/provider.dart';
 
 import '../component/custom_future_builder.dart';
 import '../mvc/controllers/report_controller.dart';
@@ -19,15 +20,17 @@ class ProductVotesPanel extends AbstractProductPanel {
 
   @override
   Widget build(BuildContext context) {
-    return CustomFutureBuilder(
-      future: Future.wait([
-        reportController.getTotalByAllergen(product.idProduct),
-        productAllergenTypeController.index(),
-      ]),
-      builder: (context, data) {
-        return buildContainer("Informados", data);
-      },
-    );
+    return Consumer<ReportController>(builder: (context, reportController, _) {
+      return CustomFutureBuilder(
+        future: Future.wait([
+          reportController.getTotalByAllergen(product.idProduct),
+          productAllergenTypeController.index(),
+        ]),
+        builder: (context, data) {
+          return buildContainer("Informados", data);
+        },
+      );
+    });
   }
 
   @override
