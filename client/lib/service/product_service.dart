@@ -1,6 +1,6 @@
 import 'package:app_food_scan/data/product_dao.dart';
 
-import '../mvc/models/product_model.dart';
+import '../mvc/models/internal/product_model.dart';
 
 class ProductService {
   final ProductDAO productDAO;

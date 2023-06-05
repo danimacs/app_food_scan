@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 
-import '../mvc/models/product_model.dart';
+import '../mvc/models/internal/product_model.dart';
 import '../providers/database_provider.dart';
 
 class ProductDAO {

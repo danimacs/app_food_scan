@@ -16,6 +16,9 @@ public class ProductAllergen {
 
     public static final String ID_PRODUCT_ALLERGEN_COLUMN = "ID_PRODUCT_ALLERGEN";
     public static final String ID_DEVICE_COLUMN = "ID_DEVICE";
+    public static final String ID_PRODUCT_ALLERGEN_TYPE_COLUMN = "ID_PRODUCT_ALLERGEN_TYPE";
+    public static final String ID_PRODUCT_COLUMN = "ID_PRODUCT";
+    public static final String ID_ALLERGEN_COLUMN = "ID_ALLERGEN";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +28,17 @@ public class ProductAllergen {
     @Column(name = ID_DEVICE_COLUMN)
     private String idDevice;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = Product.ID_PRODUCT_COLUMN)
+    @JoinColumn(name = ID_PRODUCT_ALLERGEN_TYPE_COLUMN)
+    private ProductAllergenType productAllergenType;
+
+    @ManyToOne
+    @JoinColumn(name = ID_PRODUCT_COLUMN)
+    @JsonIgnore
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = Allergen.ID_ALLERGEN_COLUMN)
+    @JoinColumn(name = ID_ALLERGEN_COLUMN)
     private Allergen allergen;
 
 }

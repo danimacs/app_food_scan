@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 
 import '../config/styles.dart';
 import '../mvc/controllers/product_controller.dart';
-import '../mvc/models/product_model.dart';
+import '../mvc/models/internal/product_model.dart';
 import 'product_item.dart';
 
 class ProductsGrid extends StatelessWidget {

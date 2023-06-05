@@ -1,6 +1,6 @@
 import 'package:openfoodfacts/openfoodfacts.dart';
 
-import '../../clients/open_food_facts_client.dart';
+import '../../../clients/open_food_facts_client.dart';
 
 class ProductModel {
   final String idProduct;

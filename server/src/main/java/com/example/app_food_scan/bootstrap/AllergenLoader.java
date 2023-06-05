@@ -20,21 +20,22 @@ public class AllergenLoader implements CommandLineRunner {
 
     private void loadAllergens() {
         if (allergenRepository.count() == 0) {
-            allergenRepository.save(new Allergen("en:lupin"));
-            allergenRepository.save(new Allergen("en:peanuts"));
-            allergenRepository.save(new Allergen("en:sulphur-dioxide-and-sulphites"));
-            allergenRepository.save(new Allergen("en:milk"));
-            allergenRepository.save(new Allergen("en:crustaceans"));
-            allergenRepository.save(new Allergen("en:molluscs"));
-            allergenRepository.save(new Allergen("en:eggs"));
-            allergenRepository.save(new Allergen("en:gluten"));
-            allergenRepository.save(new Allergen("en:soybeans"));
-            allergenRepository.save(new Allergen("en:fish"));
-            allergenRepository.save(new Allergen("en:mustard"));
-            allergenRepository.save(new Allergen("en:sesame-seeds"));
-            allergenRepository.save(new Allergen("en:celery"));
-            allergenRepository.save(new Allergen("en:none"));
-            allergenRepository.save(new Allergen("en:nuts"));
+            allergenRepository.save(new Allergen("en:lupin", "Altramuz"));
+            allergenRepository.save(new Allergen("en:peanuts", "Cacahuetes"));
+            allergenRepository.save(new Allergen("en:sulphur-dioxide-and-sulphites", "Dióxido de azufre"));
+            allergenRepository.save(new Allergen("en:milk", "Leche"));
+            allergenRepository.save(new Allergen("en:crustaceans", "Crustáceos"));
+            allergenRepository.save(new Allergen("en:molluscs", "Moluscos"));
+            allergenRepository.save(new Allergen("en:eggs", "Huevos"));
+            allergenRepository.save(new Allergen("en:gluten", "Gluten"));
+            allergenRepository.save(new Allergen("en:soybeans", "Soja"));
+            allergenRepository.save(new Allergen("en:fish", "Pescado"));
+            allergenRepository.save(new Allergen("en:mustard", "Mostaza"));
+            allergenRepository.save(new Allergen("en:sesame-seeds", "Semillas de sésamo"));
+            allergenRepository.save(new Allergen("en:celery", "Apio"));
+            allergenRepository.save(new Allergen("en:none", "Ninguno"));
+            allergenRepository.save(new Allergen("en:nuts", "Frutos secos"));
+
 
             System.out.println("Default Allergens Loaded");
         }

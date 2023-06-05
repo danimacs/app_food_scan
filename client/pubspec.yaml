@@ -40,6 +40,7 @@ dependencies:
   openfoodfacts: ^2.5.0
   flutter_barcode_scanner: ^2.0.0
   get_it: ^7.6.0
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:

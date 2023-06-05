@@ -24,9 +24,6 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<ProductAllergen> allergens;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<ProductTrace> traces;
-
     public Product(String idProduct) {
         this.idProduct = idProduct;
     }

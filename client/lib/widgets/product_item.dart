@@ -5,7 +5,7 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import '../component/custom_future_builder.dart';
 import '../config/styles.dart';
 import '../mvc/controllers/product_controller.dart';
-import '../mvc/models/product_model.dart';
+import '../mvc/models/internal/product_model.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductModel product;
@@ -35,9 +35,10 @@ class ProductItem extends StatelessWidget {
               ),
               Text(
                 productOFF?.brands ?? '',
-                style: const TextStyle(fontSize: 18.0),
+                style: const TextStyle(fontSize: 20.0),
                 overflow: TextOverflow.ellipsis,
               ),
+              Text(product.idProduct)
             ],
           ),
         );

@@ -6,7 +6,7 @@ import '../../component/custom_app_bar.dart';
 import '../../component/custom_future_builder.dart';
 import '../../widgets/products_grid.dart';
 import '../controllers/product_controller.dart';
-import '../models/product_model.dart';
+import '../models/internal/product_model.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen() : super(key: UniqueKey());

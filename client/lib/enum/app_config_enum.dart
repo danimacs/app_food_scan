@@ -1,0 +1,4 @@
+enum AppConfigEnum {
+  isFirstLaunch,
+  idDevice,
+}

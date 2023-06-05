@@ -1,4 +1,0 @@
-enum AppRoute {
-  home,
-  product,
-}
