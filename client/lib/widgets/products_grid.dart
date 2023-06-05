@@ -23,7 +23,7 @@ class ProductsGrid extends StatelessWidget {
         final product = products[index];
         return GestureDetector(
           onTap: () => view(context, product),
-          child: ProductItem(product: product),
+          child: ProductItem(product: product, fromMenu: true),
         );
       },
     );

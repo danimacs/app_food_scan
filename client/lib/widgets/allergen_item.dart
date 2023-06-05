@@ -17,7 +17,7 @@ class AllergenItem extends StatelessWidget {
     return CustomFutureBuilder<AllergenAPIModel>(
       future: allergenController.read(idAllergen),
       builder: (context, allergen) {
-        return Chip(label: Text(allergen?.name ?? ''));
+        return Chip(label: Text(allergen != null ? allergen.name! : idAllergen));
       },
     );
   }

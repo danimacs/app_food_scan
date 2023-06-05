@@ -9,8 +9,9 @@ import '../mvc/models/internal/product_model.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductModel product;
+  final bool fromMenu;
 
-  ProductItem({required this.product}) : super(key: UniqueKey());
+  ProductItem({required this.product, this.fromMenu = false}) : super(key: UniqueKey());
 
   final ProductController productController = GetIt.I<ProductController>();
 
@@ -19,28 +20,50 @@ class ProductItem extends StatelessWidget {
     return CustomFutureBuilder<Product?>(
       future: product.productOFF,
       builder: (context, productOFF) {
-        return Container(
-          width: myProductWidth,
-          height: myProductHeight,
-          margin: myProductMargin,
-          padding: myProductPadding,
-          decoration: myProductDecoration,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                productOFF?.productName ?? '',
-                style: const TextStyle(fontSize: 22.0),
-                overflow: TextOverflow.ellipsis,
+        return Row(
+          children: [
+            Expanded(
+              child: Container(
+                height: myProductHeight,
+                margin: myProductMargin,
+                padding: myProductPadding,
+                decoration: myProductDecoration,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      productOFF?.productName ?? '',
+                      style: const TextStyle(fontSize: 22.0),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      productOFF?.brands ?? '',
+                      style: const TextStyle(fontSize: 20.0),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(product.idProduct)
+                  ],
+                ),
               ),
-              Text(
-                productOFF?.brands ?? '',
-                style: const TextStyle(fontSize: 20.0),
-                overflow: TextOverflow.ellipsis,
+            ),
+            if (!fromMenu) ...[
+              Expanded(
+                child: Container(
+                  height: myProductHeight,
+                  margin: myProductMargin,
+                  padding: myProductPadding,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: NetworkImage(productOFF?.imageFrontSmallUrl ?? ''),
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                ),
               ),
-              Text(product.idProduct)
-            ],
-          ),
+            ]
+          ],
         );
       },
     );
