@@ -7,7 +7,7 @@ import '../mvc/models/external/allergen_api_model.dart';
 class AllergenService {
   AllergenService();
 
-  final uri = 'http://10.0.2.2:8080/api/v1/allergen';
+  final uri = 'http://155.133.23.131:8080/api/v1/allergen';
 
   Future<List<AllergenAPIModel>> index() async {
     final response = await http.get(

@@ -9,7 +9,7 @@ import '../mvc/models/external/product_api_model.dart';
 class ReportService {
   ReportService();
 
-  final uri = 'http://10.0.2.2:8080/api/v1/product';
+  final uri = 'http://155.133.23.131:8080/api/v1/product';
 
   Future<void> reportAllergens(String idDevice, ProductAPIModel productAPIModel) async {
     final response = await http.post(

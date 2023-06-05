@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class ProductAllergenTypeService {
   ProductAllergenTypeService();
 
-  final uri = 'http://10.0.2.2:8080/api/v1/product-allergen-type';
+  final uri = 'http://155.133.23.131:8080/api/v1/product-allergen-type';
 
   Future<List<ProductAllergenTypeAPIModel>> index() async {
     final response = await http.get(
