@@ -38,6 +38,7 @@ class ReportController with ChangeNotifier {
     reportService.reportAllergens(idDevice, productAPIModel);
 
     Navigator.of(context).pop();
+    Navigator.of(context).pop();
     notifyListeners();
   }
 
